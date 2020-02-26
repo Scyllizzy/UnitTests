@@ -57,9 +57,38 @@ namespace CPW212_UnitTestStarterCode.Tests
 
             Assert.ThrowsException<ArgumentException>(() => SimpleMath.Divide(num1, num2));
         }
+   
+        [TestMethod()]
+        [DataRow(5, 10)]
+        [DataRow(0, 100)]
+        [DataRow(-1, -10)]
+        public void Divide_TwoValidNumbers_ReturnsQuotient(double num1, double num2)
+        {
+            // Arrange
+            double expectedSum = num1 / num2;
 
-        // TODO: Test Divide method with two valid numbers
+            // Act
+            double methodSum = SimpleMath.Divide(num1, num2);
 
-        // TODO: Test subtract method with two valid numbers
+            // Assert
+            Assert.AreEqual(expectedSum, methodSum);
+        }
+
+        [TestMethod()]
+        [DataRow(5, 10)]
+        [DataRow(0, 100)]
+        [DataRow(-1, -10)]
+        [DataRow(0, -0)]
+        public void Subtract_TwoValidNumbers_ReturnsDifference(double num1, double num2)
+        {
+            // Arrange
+            double expectedSum = num1 - num2;
+
+            // Act
+            double methodSum = SimpleMath.Subtract(num1, num2);
+
+            // Assert
+            Assert.AreEqual(expectedSum, methodSum);
+        }
     }
 }
