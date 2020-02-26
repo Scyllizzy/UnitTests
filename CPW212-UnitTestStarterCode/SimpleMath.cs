@@ -30,6 +30,11 @@ namespace CPW212_UnitTestStarterCode
 
         public static double Divide(double num1, double num2)
         {
+            if (num2 == 0)
+            {
+                throw new ArgumentException("Denominator cannot be zero");
+            }
+
             return num1 / num2;
         }
     }
