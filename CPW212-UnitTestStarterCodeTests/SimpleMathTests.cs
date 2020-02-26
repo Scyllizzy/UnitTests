@@ -20,12 +20,13 @@ namespace CPW212_UnitTestStarterCode.Tests
         {
             // Arrange
             double expectedSum = num1 + num2;
+            double methodSum;
 
             // Act
-            double sum = SimpleMath.Add(num1, num2);
+            methodSum = SimpleMath.Add(num1, num2);
 
             // Assert
-            Assert.AreEqual(expectedSum, sum);
+            Assert.AreEqual(expectedSum, methodSum);
         }
 
         [TestMethod]
